@@ -1,7 +1,8 @@
 package io.egen.rentalflix;
 
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.ArrayList;
 import java.util.Iterator;
 /**
@@ -9,8 +10,8 @@ import java.util.Iterator;
  * You can use any Java collection type to store movies
  */
 public class MovieService implements IFlix {
-
-	CopyOnWriteArrayList<Movie> movieList = new CopyOnWriteArrayList<Movie>();
+ 
+	private Queue<Movie> movieList = new ConcurrentLinkedQueue<Movie>();
 	@Override
 	public List<Movie> findAll() 
 	{
